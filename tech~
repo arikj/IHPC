@@ -1,0 +1,25 @@
+
+In this article, I am going to tell you about one of my initial experience with programming. I was given an assignment in which I need to code a problem where given total number of coin tosses and head occurences, probability of occuring a tail had to be calculated. The problem seemed to be very trivial, but I didnt realise the complications I was going to face to code it correctly.
+
+Being a naive programmer at that time,I carefully wrote a code in C language. When I was done, I compiled and executed it. Something unexpected happened when I ran it for first input:
+
+INPUT:
+	Total number of toss = 1000
+	Number of Head occurences = 500
+
+OUTPUT: 
+	Probability of occuring a tail = 0
+  
+I thought I must had made some silly mistake. The code hardly had 15 lines so there was not much scope of any error since most of them consisted  of variable declarations and simple mathematical calculations. I went through the seemingly perfect code trying to find any bug. And finally, I got it. Yes, I found an error in declaring the variable type of probabilty. I declared it as "int" which should have been "float". But, the story didnt end here. When I ran the code again, I got this result:
+
+Probability of occuring a tail = 0.000000
+
+Now, that was shocking. All efforts just for those useless extra zeroes at the end. I decided to give it another try. I tried finding the line containing error by printing values after each line. It helped me to realise that the error was in the final calculation where I divide the two integers to obtain the final result. But, what could go wrong with this obvious statement? I finally decided to look for it on the internet where I found the solution in the very first link. 
+ 
+The entire problem was due to integer division. When two "int" type variables are divided result is also integer. Therefore, they must be type casted to "float" type before division. I changed my program accordingly and finally get the correct output:
+
+Probability of occuring a tail = 0.500000
+
+I ran the code for few more inputs and they all produced right results. I learned an important programming concept that day which every programmer must remember.
+
+The beginners usually make mistakes while declaring variables' type and typecasting. Therefore, they must be handled carefully. As a beginner, don't be afraid of making errors while coding because mistakes may help you learn some new interesting concepts.  
